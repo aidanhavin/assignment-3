@@ -1,0 +1,63 @@
+<!--
+ Full Name: Aidan Marino
+ Course Name: COP4813 — Web Development
+ Major: Computer Science
+ Date of Submission: 09/30/2025
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aidan Marino — Time Aware Webpage</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 40px;
+      background-color: #f4f4f9;
+    }
+    h1 {
+      color: #333;
+    }
+    img {
+      margin-top: 20px;
+      max-width: 500px;
+      width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+  </style>
+</head>
+<body>
+  <h1>Welcome to my Time-Based Image Display Webpage.</h1>
+  <p><strong>Name:</strong> Aidan Marino</p>
+  <p><strong>Course:</strong> COP4813 — Web Development</p>
+  <p><strong>Major:</strong> Computer Science</p>
+  <p>Hello! This webpage changes the image depending on the time of day.</p>
+
+  <img id="timeImage" src="" alt="Time of Day Image">
+
+  <script>
+    function updateImage() {
+      const hour = new Date().getHours();
+      const image = document.getElementById("timeImage");
+
+      if (hour >= 6 && hour < 12) {
+        image.src = "https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
+        image.alt = "Morning Sunrise";
+      } else if (hour >= 12 && hour < 18) {
+        image.src = "https://images.unsplash.com/photo-1591491640784-3232eb748d4b?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
+        image.alt = "Daytime Sky";
+      } else {
+        image.src = "https://images.unsplash.com/photo-1566737236500-c8ac43014a67?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
+        image.alt = "Night City Lights";
+      }
+    }
+
+    // Run only after page fully loads
+    window.onload = updateImage;
+  </script>
+</body>
+</html>
